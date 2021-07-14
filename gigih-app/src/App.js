@@ -15,7 +15,7 @@ function App() {
             <p className='text' id="trackTitle">{data.name}</p>
             <p className='text'>{data.album.artists[0].name}</p>
             <p className='text'>{data.album.name}</p>
-            <input type='button' value='Select'/>
+            <input type='button' value='Select' className='buttonSelect'/>
         </div>
     </body>
     </div>
