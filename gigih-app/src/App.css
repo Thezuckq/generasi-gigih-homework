@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #ede7e3;
+  font-family: "Roboto";
+}
+
+h1 {
+  padding: 20px;
+  color: #16697a;
+}
+
+.labTitle {
+  margin-right: 60px;
+  margin-left: 20px;
+  color: #212121;
+  font-weight: 500;
+}
+
+.labDesc {
+  margin-right: 10px;
+  margin-left: 20px;
+  color: #212121;
+  font-weight: 500;
+}
+
+.albumCover {
+  max-width: 300px;
+}
+
+.inputTitle {
+  margin-bottom: 10px;
+  color: #212121;
+  background-color: #82c0cc;
+  border-color: #82c0cc;
+  border-radius: 4px;
+  height: 20px;
+}
+
+.inputDesc {
+  margin-bottom: 10px;
+  color: #212121;
+  background-color: #82c0cc;
+  border-color: #82c0cc;
+  border-radius: 4px;
+  height: 60px;
+}
+
+.inputSubmit {
+  padding: 4px 8px;
+  margin-top: 4px;
+  margin-left: 212px;
+}
+
+.boxPlaylist {
+  margin: 20px;
+  padding: 20px;
+  border: 4px solid #489fb5;
+  background: #82c0cc;
+  border-radius: 24px;
+  max-width: 300px;
+}
+
+.text {
+  color: #212121;
+  font-size: 20px;
+}
+
+#trackTitle {
+  font-weight: 500;
+}
