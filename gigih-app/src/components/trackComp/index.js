@@ -1,20 +1,28 @@
 import './index.css';
-import data from '../../data.js';
+import data from '../../data/playlists';
 
 const TrackComp = () => {
+    const renderTracks = data =>
+    data
+      .map(track => 
+        <div className='grid-item' key={track.id}>
+            <div class='boxPlaylist'>
+                <img src={track.album.images[1].url} alt={track.name} className='albumImages'/>
+                <div className='trackInfoWrapper'>
+                    <h2 className='text'>{track.name}</h2>
+                    <h3 className='text'>{track.album.name}</h3>
+                    <h3 className='text'>{track.artists[0].name}</h3>
+                </div>
+                <form target='_blank' action={track.external_urls.spotify}><input type='submit' value='Select' className='buttonSelect'/></form>
+            </div>
+        </div>);
 
     return (
-        <div>
-            <div class='boxPlaylist'>
-                <img src={data.album.images[0].url} className='albumCover' alt="album-cover"/>
-                <p className='text' id="trackTitle">{data.name}</p>
-                <p className='text'>{data.album.artists[0].name}</p>
-                <p className='text'>{data.album.name}</p>
-                <input type='button' value='Select' className='buttonSelect'/>
-            </div>
+        <div className='grid-container'>
+            {renderTracks(data)}
         </div>
     );
 };
 
 export default TrackComp;
-    
+
