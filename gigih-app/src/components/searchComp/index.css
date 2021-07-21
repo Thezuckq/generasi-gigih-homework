@@ -1,0 +1,19 @@
+.search{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 24px;
+    padding: 8px;
+    border-color: #489fb5;
+}
+
+.button-search {
+    width: 200px;
+    height: 56px;
+    border-radius: 8px;
+    font-size: 24px;
+    margin-left: 12px;
+    color: #212121;
+    background-color: #ede7e3;
+    border-color: #489fb5;
+}

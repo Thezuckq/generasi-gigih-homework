@@ -1,0 +1,10 @@
+.buttonSelect {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #212121;
+    background-color: #ede7e3;
+    border-radius: 8px;
+    border-color: #489fb5;
+}

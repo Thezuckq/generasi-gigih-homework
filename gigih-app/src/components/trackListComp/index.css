@@ -1,0 +1,4 @@
+.list-container {
+    display:inline-flex;
+    column-gap: 40px;
+  }
