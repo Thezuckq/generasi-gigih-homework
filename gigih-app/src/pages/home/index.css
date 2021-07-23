@@ -8,3 +8,7 @@
 .grid-item {
   margin: 20px;
 }
+
+.selectedByUser {
+  width: 320px;
+}
