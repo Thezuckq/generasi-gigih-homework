@@ -187,6 +187,8 @@ function Home() {
           altImg={image[0] > 0 ? "An Track Image" : "No Image Available"}
           artistName={artist}
           trackTitle={item.name}
+          btnName={selectedUri.includes(item.uri) ? "Deselect" : "Select"}
+          enableBtn={enableBtn}
           onClick={() => {
             handleSelectedTrack(item.uri, item);
           }}

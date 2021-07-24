@@ -10,7 +10,7 @@ function SpotifySearch({
 }) {
   return (
     <div className="Navbar">
-      <h1>Spotifai</h1>
+      <h1>Spotify KW Super</h1>
       <SearchForm
         placeholder="Search"
         handleChange={handleChange}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonCompo } from "..";
+import { ButtonCompo } from "../../components";
 import './index.css';
 
 function CardTrackComp({ imgUrl, altImg, trackTitle, artistName, btnName, enableBtn, onClick }) {
