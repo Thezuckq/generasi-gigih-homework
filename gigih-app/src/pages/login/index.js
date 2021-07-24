@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonComp } from "../../components";
+import { ButtonCompo } from "../../components";
 import "./index.css";
 
 class Login extends React.Component {
@@ -13,7 +13,7 @@ class Login extends React.Component {
         <h1>Hi Welcome to Spotify KW Super!</h1>
         <img src="https://www.scdn.co/i/_global/open-graph-default.png" width="320px" alt="spotify-logo"></img>
         <h2>Click Button Below to Login</h2>
-        <ButtonComp 
+        <ButtonCompo 
           name="Login" 
           url={linkURL}
         />

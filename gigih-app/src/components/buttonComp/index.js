@@ -1,23 +1,22 @@
 import React, { useState } from "react";
-import './index.css';
+import "./index.css";
 
-function ButtonComp({ name, onClick, url }) {
+function ButtonCompo({ name, onClick, link }) {
   const [isSelected, setSelected] = useState(false);
+
   return (
-    <div>
-      <a href={url}>
-        <button
-          className="buttonSelect"
-          onClick={() => {
-            onClick();
-            setSelected(!isSelected);
-          }}
-        >
-          {isSelected ? "Deselect" : name}
-        </button>
-      </a>
+    <div className="ButtonContainer">
+      <button
+        className="SelectBtn"
+        onClick={() => {
+          onClick();
+          setSelected(!isSelected);
+        }}
+      >
+        <a href={link}>{isSelected ? "Deselect" : name}</a>
+      </button>
     </div>
   );
 }
 
-export default ButtonComp;
+export default ButtonCompo;

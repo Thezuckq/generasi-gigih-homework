@@ -1,12 +1,28 @@
 import React from "react";
-import { SearchComp } from "..";
+import { SearchForm } from "..";
 
-function SpotifySearch(props) {
-  const { handleChange, handleClick, inputValue } = props;
-
+function SpotifySearch({
+  handleChange,
+  handleSubmit,
+  handleClick,
+  inputValue,
+  isFormActive,
+}) {
   return (
-    <div className="spotify-search">
-      <SearchComp placeholder="Search" handleChange={handleChange} value={inputValue} handleClick={handleClick} />
+    <div className="Navbar">
+      <h1>Spotifai</h1>
+      <SearchForm
+        placeholder="Search"
+        handleChange={handleChange}
+        value={inputValue}
+        handleSubmit={handleSubmit}
+      />
+      <button
+        className={isFormActive ? "ActiveButton" : "PlaylistButton"}
+        onClick={handleClick}
+      >
+        Create Playlist
+      </button>
     </div>
   );
 }
