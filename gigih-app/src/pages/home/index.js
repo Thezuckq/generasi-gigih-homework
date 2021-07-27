@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   CardTrackComp,
   SpotifySearch,
@@ -7,12 +8,12 @@ import {
 } from "../../components";
 import axios from "axios";
 import "./index.css";
+import { fetchUserId, getHashParams } from "../../redux/credential-slice";
 
 function Home() {
+  const { userId, token, tokenType } = useSelector((state) => state.credential);
+  const dispatch = useDispatch();
   const [query, setQuery] = useState("");
-  const [token, setToken] = useState("");
-  const [tokenType, setTokenType] = useState("");
-  const [userId, setUserId] = useState("");
   const [isFormActive, setFormActive] = useState(false);
   const [inputValue, setInputValue] = useState({
     titlePlaylist: "",
@@ -23,24 +24,11 @@ function Home() {
   const [selectedList, setSelectedList] = useState([]);
 
   useEffect(() => {
-    setToken(getHashParam().get("access_token"));
-    setTokenType(getHashParam().get("token_type"));
-  }, []);
+    dispatch(getHashParams(document.location.hash));
+  }, [dispatch]);
 
   // API Call
-  const getUserId = async () => {
-    const response = await axios.get("https://api.spotify.com/v1/me", {
-      headers: {
-        Authorization: `${tokenType} ${token}`,
-      },
-    });
-
-    setUserId(response.data.id);
-
-    console.log(response.data.id);
-  };
-
-  const searchTrack = async (query, token, tokenType) => {
+  const searchTrack = async (query, tokenType) => {
     const response = await axios.get("https://api.spotify.com/v1/search", {
       headers: {
         Authorization: `${tokenType} ${token}`,
@@ -123,13 +111,13 @@ function Home() {
       alert("Please fill the search input first");
     } else {
       const keyword = query.replace(" ", "+");
-      await searchTrack(keyword, token, tokenType);
+      await searchTrack(keyword, tokenType);
+      dispatch(fetchUserId(token, tokenType));
     }
   };
 
   const handleCreatePlaylistForm = async () => {
     setFormActive(!isFormActive);
-    await getUserId();
   };
 
   const handleSubmitPlaylist = async (event) => {
@@ -196,13 +184,6 @@ function Home() {
         />
       );
     });
-  };
-
-  // Other utils
-  const getHashParam = () => {
-    let hashUrl = document.location.hash.substr(1);
-    let hashComponent = new URLSearchParams(hashUrl);
-    return hashComponent;
   };
 
   const checkImageAvailability = (list) => {
