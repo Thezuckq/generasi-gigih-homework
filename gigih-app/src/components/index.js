@@ -6,4 +6,3 @@ export { default as CardTrackComp } from './cardTrackComp';
 export { default as TrackListComp } from './trackListComp';
 export { default as SearchForm } from './searchForm';
 export { default as PlaylistForm } from './playlistForm';
-export { default as ButtonLogin } from './buttonLogin';

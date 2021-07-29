@@ -1,8 +1,5 @@
 import './App.css';
-// import Playlists from './pages/playlists';
-import Home from './pages/home';
-import Login from './pages/login';
-import { Route } from "react-router-dom";
+import MyRouter from "./config/routes";
 
 
 function App() {
@@ -10,8 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path="/" component={Login} />
-      <Route path="/callback" component={Home} />
+      <MyRouter />
     </div>
   );
 }

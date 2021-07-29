@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 // Slice
 export const credentialSlice = createSlice({
@@ -8,6 +7,8 @@ export const credentialSlice = createSlice({
     userId: "",
     token: "",
     tokenType: "",
+    imgUrl: "",
+    isLoggedin: false,
   },
   reducers: {
     getUserId: (state, action) => {
@@ -19,25 +20,18 @@ export const credentialSlice = createSlice({
     getTokenType: (state, action) => {
       state.tokenType = action.payload;
     },
+    getImageUrl: (state, action) => {
+      state.imgUrl = action.payload;
+    },
+    getIsLoggedIn: (state, action) => {
+      state.isLoggedin = action.payload;
+    },
   },
 });
 
-export const { getToken, getTokenType, getUserId } = credentialSlice.actions;
+export const { getToken, getTokenType, getUserId, getImageUrl, getIsLoggedIn } = credentialSlice.actions;
 
 export default credentialSlice.reducer;
-
-// Action
-export const fetchUserId = (token, tokenType) => async (dispatch) => {
-  axios
-    .get("https://api.spotify.com/v1/me", {
-      headers: {
-        Authorization: `${tokenType} ${token}`,
-      },
-    })
-    .then((response) => {
-      dispatch(getUserId(response.data.id));
-    });
-};
 
 export const getHashParams = (url) => (dispatch) => {
   const hashUrl = url.substr(1);

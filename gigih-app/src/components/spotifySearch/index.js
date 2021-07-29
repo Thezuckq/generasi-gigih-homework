@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { SearchForm } from "..";
+import { useSelector } from "react-redux";
+import { SIGNIN_URL } from "../../config/constant";
 
 function SpotifySearch({
   handleChange,
@@ -7,7 +10,15 @@ function SpotifySearch({
   handleClick,
   inputValue,
   isFormActive,
+  isUserLoggedin,
+  imgUrl,
 }) {
+  const { selectedList } = useSelector((state) => state.track);
+
+  const handleAlert = () => {
+    alert("Please choose your track first");
+  };
+
   return (
     <div className="Navbar">
       <h1>Spotify KW Super</h1>
@@ -17,12 +28,24 @@ function SpotifySearch({
         value={inputValue}
         handleSubmit={handleSubmit}
       />
-      <button
-        className={isFormActive ? "ActiveButton" : "PlaylistButton"}
-        onClick={handleClick}
-      >
-        Create Playlist
-      </button>
+      <div className="LeftSideNav">
+        {selectedList.length > 0 && isUserLoggedin ? (
+          <Link to="/create-playlist" className="ActiveButton">
+            Create Playlist
+          </Link>
+        ) : (
+          <button className="PlaylistButton" onClick={handleAlert}>
+            Create Playlist
+          </button>
+        )}
+        {imgUrl !== "" ? (
+          <img src={imgUrl} alt="" className="ProfileImage" />
+        ) : (
+          <a className="LoginButton" href={SIGNIN_URL}>
+            Login
+          </a>
+        )}
+      </div>
     </div>
   );
 }
