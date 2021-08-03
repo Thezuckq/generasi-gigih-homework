@@ -1,4 +1,10 @@
+.list-title {
+  margin-top: 48px;
+}
 .list-container {
-    display:inline-flex;
-    column-gap: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    margin: 48px auto 48px auto;
   }

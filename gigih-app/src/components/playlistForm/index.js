@@ -1,11 +1,12 @@
 import React from "react";
+import "./index.css";
 
 function PlaylistForm({ titleValue, descValue, handleSubmit, onChange }) {
   return (
     <div className="PlaylistForm">
       <form onSubmit={handleSubmit}>
         <input
-          className="InputForm"
+          className="InputFormTitle"
           type="text"
           placeholder="Playlist Title"
           value={titleValue}
@@ -14,7 +15,7 @@ function PlaylistForm({ titleValue, descValue, handleSubmit, onChange }) {
           minLength="10"
         />
         <input
-          className="InputForm"
+          className="InputFormDesc"
           type="text"
           placeholder="Playlist Description"
           value={descValue}

@@ -5,7 +5,8 @@
     background: #82c0cc;
     border-radius: 24px;
     width: 320px;
-    height: 560px;
+    flex: 1 0 21%;
+    display: inline-block;
 }
 
 .albumImages {

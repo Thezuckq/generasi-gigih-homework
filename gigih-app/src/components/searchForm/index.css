@@ -1,0 +1,16 @@
+.Form {
+    display: flex;
+}
+
+.SearchInput {
+    width: 320px;
+    height: 60px;
+    border-radius: 24px;
+    padding: 0 0 0 24px;
+    border-style: none;
+    font-size: 24px;
+    margin: 48px;
+    float: left;
+    flex-wrap: wrap;
+}
+

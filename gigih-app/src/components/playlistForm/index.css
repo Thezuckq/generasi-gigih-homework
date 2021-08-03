@@ -1,0 +1,30 @@
+.PlaylistForm {
+    margin: 48px auto 48px auto;
+}
+.InputFormTitle {
+    margin-left: 24px;
+    width: 200px;
+    height: 40px;
+    border-radius: 24px;
+    padding: 4px 16px;
+}
+
+.InputFormDesc {
+    margin-left: 24px;
+    width: 200px;
+    height: 40px;
+    border-radius: 24px;
+    padding: 4px 16px;
+}
+
+.CreateButton {
+    margin-left: 24px;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #212121;
+    background-color: #ede7e3;
+    border-radius: 8px;
+    border-color: #489fb5;
+}

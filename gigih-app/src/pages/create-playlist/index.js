@@ -5,6 +5,7 @@ import { PlaylistForm, TrackListComp, CardTrackComp } from "../../components";
 import { getSelectedUri, getSelectedList } from "../../redux/track-slice";
 import { checkImageAvailability } from "../../config/utils";
 import { SPOTIFY_ENDPOINT } from "../../config/constant";
+import "./index.css";
 
 function CreatePlaylist() {
   const { userId, token, tokenType } = useSelector((state) => state.credential);
@@ -150,7 +151,7 @@ function CreatePlaylist() {
         handleSubmit={handleSubmitPlaylist}
         onChange={handleOnChangePlaylist}
       />
-      <TrackListComp title="User Choice" list={getTrackList(selectedList, false)} />
+      <TrackListComp title="Selected Tracks" list={getTrackList(selectedList, false)} />
     </div>
   );
 }

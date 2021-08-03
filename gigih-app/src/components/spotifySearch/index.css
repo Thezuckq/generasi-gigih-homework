@@ -1,0 +1,58 @@
+.CreatePlaylistButton {
+    width: 240px;
+    border-radius: 24px;
+    border-style: none;
+    background-color: #16697a;
+    color: papayawhip;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 12px;
+    text-align: center;
+    margin: 96px auto 24px auto;
+    display: block;
+}
+.ActiveButton {
+    width: 240px;
+    border-radius: 24px;
+    border-style: none;
+    background-color: #16697a;
+    color: papayawhip;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 12px;
+    text-align: center;
+    margin: 24px auto 24px auto;
+    display: block;
+    text-decoration: none;
+}
+
+.Navbar {
+    display: grid;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.LoginButton {
+    display: block;
+    float: right;
+    margin: 48px;
+    width: 120px;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 12px;
+    border: peru solid 2px;
+    border-radius: 24px;
+    background-color: peru;
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.ProfileImage {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 48px;
+    float: right;
+    width: 60px;
+    border-radius: 100%;
+}
