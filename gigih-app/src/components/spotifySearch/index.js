@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { SearchForm } from "..";
 import { useSelector } from "react-redux";
 import { SIGNIN_URL } from "../../config/constant";
+import { Div, Button, Anchor, Tag } from "atomize";
 import "./index.css";
 
 function SpotifySearch({
@@ -25,9 +26,20 @@ function SpotifySearch({
         {imgUrl !== "" ? (
           <img src={imgUrl} alt="" className="ProfileImage" />
         ) : (
-          <a className="LoginButton" href={SIGNIN_URL}>
-            Login
-          </a>
+          <Div className="buttonLoginAtomize">
+            <Anchor href={SIGNIN_URL}>
+              <Tag
+              bg={"warning700"}
+              rounded="xl"
+              textColor="white"
+              p={{ x: "3rem", y: "1rem" }}
+              m={{ r: "0.5rem", b: "0.5rem" }}
+              textSize="body"
+              >
+                Login
+              </Tag>
+            </Anchor>
+          </Div>
         )}
         <SearchForm
         placeholder="Search"
@@ -38,13 +50,38 @@ function SpotifySearch({
       </div>
       <div className="container-search"> 
         {selectedList.length > 0 && isUserLoggedin ? (
-          <Link to="/create-playlist" className="ActiveButton">
+          <Div justify="center" d="flex">
+            <Link to="/create-playlist" className="ActiveButton">
+            <Button
+            h="4rem"
+            p={{ x: "1.75rem" }}
+            textSize="body"
+            textColor="white"
+            bg="success700"
+            hoverBg="success600"
+            shadow="2"
+            hoverShadow="4"
+            >
             Create Playlist
-          </Link>
+            </Button>
+            </Link>
+          </Div>
         ) : (
-          <button className="CreatePlaylistButton" onClick={handleAlert}>
+          <Div justify="center" d="flex">
+            <Button
+            h="4rem"
+            p={{ x: "1.75rem" }}
+            textSize="body"
+            textColor="white"
+            bg="success700"
+            hoverBg="success600"
+            shadow="2"
+            hoverShadow="4"
+            justify="center"
+            onClick={handleAlert}>
             Create Playlist
-          </button>
+          </Button>
+          </Div>
         )}
       </div>
     </div>

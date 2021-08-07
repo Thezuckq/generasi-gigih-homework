@@ -5,14 +5,36 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
+import { ThemeProvider } from 'atomize';
 
+const theme = {
+  colors: {
+    primary: 'black',
+    accent: 'yellow',
+  },
+  fontFamily: {
+    primary: "Roboto"
+  }
+};
 
+const debug =
+  // eslint-disable-next-line no-undef
+  process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+
+// 1. Create a client engine instance
+const engine = new Styletron();
 
 ReactDOM.render(
   <React.StrictMode>
+    <ThemeProvider theme={theme}>
+    <StyletronProvider value={engine} debug={debug} debugAfterHydration>
     <Provider store={store}>
       <App />
     </Provider>
+    </StyletronProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

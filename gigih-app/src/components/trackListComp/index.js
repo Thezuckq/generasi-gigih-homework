@@ -1,3 +1,4 @@
+import { Div } from "atomize";
 import React from "react";
 import "./index.css";
 
@@ -6,7 +7,7 @@ function TrackListComp(props) {
   return (
     <div className="list-title">
       <h2>{title}</h2>
-      <div className="list-container">{list}</div>
+      <Div className="list-container">{list}</Div>
     </div>
   );
 }

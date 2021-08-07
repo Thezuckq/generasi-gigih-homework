@@ -2,9 +2,9 @@
   margin-top: 48px;
 }
 .list-container {
-    width: 100%;
+    width: 94%;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 24px;
+    column-gap: 48px;
     margin: 48px auto 48px auto;
   }

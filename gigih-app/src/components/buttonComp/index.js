@@ -1,14 +1,19 @@
 /* eslint-disable react/prop-types */
+import { Button, Div, Anchor } from "atomize";
 import React, { useState } from "react";
 import "./index.css";
 
-function Button({ name, onClick, link }) {
+function ButtonCompo({ name, onClick, link }) {
   const [isSelected, setSelected] = useState(false);
 
   return (
-    <div className="ButtonContainer">
-      <a href={link}>
-        <button
+    <Div 
+    justify="center"
+    d="flex"
+    >
+      <Anchor 
+      href={link}>
+        <Button
           className="buttonSelect"
           onClick={() => {
             onClick();
@@ -16,10 +21,10 @@ function Button({ name, onClick, link }) {
           }}
         >
           {isSelected ? "Deselect" : name}
-        </button>
-      </a>
-    </div>
+        </Button>
+      </Anchor>
+    </Div>
   );
 }
 
-export default Button;
+export default ButtonCompo;

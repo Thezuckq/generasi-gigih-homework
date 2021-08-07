@@ -21,7 +21,6 @@ import {
 import { SPOTIFY_ENDPOINT } from "../../config/constant";
 import { checkImageAvailability } from "../../config/utils";
 
-
 function Home() {
   const { token, tokenType, imgUrl, isLoggedin } = useSelector(
     (state) => state.credential

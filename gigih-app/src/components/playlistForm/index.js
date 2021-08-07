@@ -1,3 +1,4 @@
+import { Button, Div } from "atomize";
 import React from "react";
 import "./index.css";
 
@@ -23,9 +24,13 @@ function PlaylistForm({ titleValue, descValue, handleSubmit, onChange }) {
           name="descPlaylist"
           minLength="20"
         />
-        <button className="CreateButton" type="submit">
+        <Div d="flex" justify="center" >
+        <Button
+        className="wrapButton" 
+        type="submit">
           Create
-        </button>
+        </Button>
+        </Div>
       </form>
     </div>
   );

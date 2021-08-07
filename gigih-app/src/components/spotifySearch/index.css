@@ -12,16 +12,6 @@
     display: block;
 }
 .ActiveButton {
-    width: 240px;
-    border-radius: 24px;
-    border-style: none;
-    background-color: #16697a;
-    color: papayawhip;
-    font-size: 24px;
-    font-weight: 500;
-    padding: 12px;
-    text-align: center;
-    margin: 24px auto 24px auto;
     display: block;
     text-decoration: none;
 }
@@ -55,4 +45,10 @@
     float: right;
     width: 60px;
     border-radius: 100%;
+}
+
+.buttonLoginAtomize {
+    float: right;
+    margin: 48px;
+
 }
