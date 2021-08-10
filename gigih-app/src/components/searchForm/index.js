@@ -6,6 +6,7 @@ function SearchForm({ handleChange, handleSubmit, value, placeholder }) {
     <form className="Form" onSubmit={handleSubmit}>
       <input
         className="SearchInput"
+        data-testid="search_input"
         type="text"
         placeholder={placeholder}
         onChange={handleChange}
