@@ -12,6 +12,7 @@ function ButtonCompo({ name, onClick, link }) {
     d="flex"
     >
       <Anchor 
+      data-testid="button_test"
       href={link}>
         <Button
           className="buttonSelect"
